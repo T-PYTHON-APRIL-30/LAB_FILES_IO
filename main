@@ -1,0 +1,18 @@
+# To-Do List
+
+while True:
+    user_input = input("do you want to add a new To-Do item? (y/n/exit) ")
+    if user_input == "y":
+        todo_item = input(" To-Do item: ")
+        with open("to_do.txt", "a") as f:
+            f.write(todo_item + "\n")
+    elif user_input == "n":
+        read_choice = input("list your To-Do items? (y/n) ")
+        if read_choice == "y":
+            with open("to_do.txt", "r") as f:
+                todo_list = f.readlines()
+                for item in todo_list:
+                    print(item.strip())
+    elif user_input == "exit":
+        print("thank you for using the To-Do program, come back again soon.")
+        break
