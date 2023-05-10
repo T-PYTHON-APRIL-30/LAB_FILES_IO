@@ -15,7 +15,7 @@
 
 
 print('Welcome to our To-Do list...')
-file = open("ToDo.txt","x", encoding="utf-8")
+file = open("ToDo.txt","a+", encoding="utf-8")
 
 while True:
 
@@ -32,9 +32,11 @@ while True:
         choise2 = input('do you want to list your To-Do items?\n (answer by "y" for yes, "n" for no): ')
         print()
         if choise2.lower() == 'y':
-            file = open("ToDo.txt", "r", encoding="utf-8")
+            file.seek(0)
             content = file.readlines()
-            print(content)
+            for line in content:
+                print(line)
+                
             print()
 
         elif choise2.lower() == 'n':
