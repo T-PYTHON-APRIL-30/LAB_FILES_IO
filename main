@@ -1,16 +1,23 @@
-# To-Do List
+# To-Do List Program
+
+# ask the user to add a new To-Do item, answer by "y" for yes, "n" for no, or exit.
+    # if yes: save in to_do.txt file.
+    # if no: sk the user "do you want to list your To-Do items? "y" for yes and "n" for no".
+        # if yes: print a list of the To-Do items one item per line. then return again to ther first question.
+        # if no: return again to ther first question.
+    # if exit: end the program and print "thank you for using the To-Do program, come back again soon"
 
 while True:
     user_input = input("do you want to add a new To-Do item? (y/n/exit) ")
     if user_input == "y":
         todo_item = input(" To-Do item: ")
-        with open("to_do.txt", "a") as f:
-            f.write(todo_item + "\n")
+        with open("to_do.txt", "a") as file:
+            file.write(todo_item + "\n")
     elif user_input == "n":
         read_choice = input("list your To-Do items? (y/n) ")
         if read_choice == "y":
-            with open("to_do.txt", "r") as f:
-                todo_list = f.readlines()
+            with open("to_do.txt", "r") as file:
+                todo_list = file.readlines()
                 for item in todo_list:
                     print(item.strip())
     elif user_input == "exit":
