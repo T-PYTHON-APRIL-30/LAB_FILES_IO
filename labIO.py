@@ -14,7 +14,7 @@ while flag:
                 lines.append(user_to_do_input + "\n")
                 print(lines)
 
-        file = open("to_do.txt", "w+", encoding="UTF-8")
+        file = open("to_do.txt", "a+", encoding="UTF-8")
         file.writelines(lines)
         file.close()
 
