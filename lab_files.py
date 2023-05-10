@@ -24,7 +24,7 @@ while user_input != "exit":
         user_input3 = input()
         file.write("\n"+user_input3)
         file.close()
-        user_input = "n"
+        user_input = input("do you want to add a new To-Do item? ")
 
     elif user_input == "n":
         user_input2 = input("do you want to list your To-Do items ? ")
@@ -33,6 +33,12 @@ while user_input != "exit":
             content = file.read()
             print(content)
             file.close
-            user_input = "exit"
+            user_input = input("do you want to add a new To-Do item(type exit to exit)? ")
+        else:
+                print("please enter 'y' to add item and 'exit' to exit")
+                user_input = input("do you want to add a new To-Do item? ")
+    else:
+                print("please enter 'y' to add item 'n' to contenue and 'exit' to exit")
+                user_input = input("do you want to add a new To-Do item? ")
 else:
     print("thank you for using the To-Do program, come back again soon")
