@@ -25,3 +25,4 @@ while True:
         
         elif user_input2 == "n":
             print("\nif you want to exit the program type exit.\n")
+print("Thank you for using the To-Do program, come back again soon\n")
