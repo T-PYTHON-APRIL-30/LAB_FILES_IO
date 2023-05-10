@@ -9,9 +9,9 @@ while True:
     user_input = input("\nDo you want to add a new To-Do item? \n")
     if user_input == "y":
         new_item = input("\nType To-Do item:\n")
-        to_do_file = open("To-Do list.txt","w+",encoding="utf-8")
-        to_do_file.write(new_item)
-        to_do_file.close()
+        to_do_file = open("To-Do list.txt","a+",encoding="utf-8")
+        to_do_file.write("\n"+new_item)
+        
 
     elif user_input == "exit":
         break
@@ -19,8 +19,8 @@ while True:
     elif user_input == "n":
         user_input2 = input("\nDo you want to list your To-Do items? \n")
         if user_input2 == "y":
-            to_do_file = open("To-Do list.txt","r+",encoding="utf-8")
-            print(to_do_file.readlines())
+            to_do_file.seek(0)
+            print(to_do_file.read())
             to_do_file.close()
         
         elif user_input2 == "n":
