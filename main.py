@@ -16,17 +16,20 @@ file = open("to_do.txt", "a+", encoding="utf-8")
 
 while True:
     user_anwser = input(
-        'do you want to add new to do list? if yes write "y" if no write n :')
+        'do you want to add new to do list? if yes write "y" if no write n and exit:')
     if user_anwser.lower() == "y":
         user_note = input('write new your to-do list :')
         file.write(user_note+"\n")
-    if user_anwser.lower() == "n":
+    elif user_anwser.lower() == "n":
         user_list = input('do you want to list your to-do items(y,n) :')
         if user_list.lower == "y":
             contant = file.readline()
             print(contant)
-    else:
+    elif user_anwser.lower == "exit":
         print("see you soon!!")
         break
+    else:
+        print("please write (y, n, exit)")
+        
 
     file.close()
