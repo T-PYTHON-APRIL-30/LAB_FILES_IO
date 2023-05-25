@@ -6,12 +6,12 @@ while True:
         file.write(todolist+"\n")
     elif answer_user.lower() == "n":
      viewlist = input("do you want to list your To-Do items ? ")
-     if answer_user =="y":
+     if viewlist =="y":
       file.seek(0)
       content = file.readlines()
       for line in content:
          print(f"- {line}")
-    elif answer_user.lower() == "exit":
+    elif viewlist.lower() == "exit":
         file.close
         break
 print("thank you for using the To-Do program, come back again soon")
